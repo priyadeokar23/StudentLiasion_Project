@@ -4,7 +4,7 @@ session_start();
 
 $hostname = "localhost";
 $username = "root";
-$password = "tejalpkhed@12_2001";
+$password = "";
 $databaseName = "studentdata";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
@@ -37,7 +37,7 @@ if(isset($_POST['confirm'])){
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Faculty Research Management System</title>
+  <title>StudentLiaison</title>
  
   <link rel="stylesheet" href="./style.css">
   <style>

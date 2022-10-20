@@ -1,55 +1,98 @@
-
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>StudentLiasion</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style11.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StudentLiaison</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style11.css" />
 
-  <style>
-    .item1 { grid-area: header; }
-    .item2 { grid-area: menu; }
-    .item3 { grid-area: main; }
-    .item4 { grid-area: right; }
-    .item5 { grid-area: footer; }
-    
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-        'header header header header header header'
-        'menu main main main right right'
-        'menu main main main right right'
-        'menu main main main right right';
-      grid-gap: 1px;
-      padding: 10px;
-    }
-    
-    .grid-container > div {
-      text-align: center;
-      padding: 20px 0;
-    }
+    <style>
+      .item1 {
+        grid-area: header;
+      }
+      .item2 {
+        grid-area: menu;
+      }
+      .item3 {
+        grid-area: main;
+      }
+      .item4 {
+        grid-area: right;
+      }
+      .item5 {
+        grid-area: footer;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "menu main main main right right"
+          "menu main main main right right"
+          "menu main main main right right";
+        grid-gap: 1px;
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        text-align: center;
+        padding: 20px 0;
+        margin-left: 80px;
+      }
     </style>
-</head>
-<body>
-<!-- partial:index.partial.html -->
-  <br>
-  <div class="grid-container">
-    <div class="item1" ><h1 align="center" style="font-size:40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><strong > StudentLiasion </strong></h1></div>
-    <div class="item2"><object type="image/svg+xml" data="img/iis3.svg" width="650" height="650"></object></div>
-    <div class="item3" style="font-size: 20px ; ">&emsp;<br><br><br><br><br> 
-    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='login_student.php';" style="font-size: 22px ;">
-      Student Log In          
-    </button><br>
-    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='login_admin.php';" style="font-size: 22px ;">
-      Admin Log In              
-    </button>
-    <div class="item5"><object type="image/svg+xml" data="img/iis2.svg" width="250" height="250"></object></div>
-  </div>  
- 
-  
-  </div>
-<!-- partial -->
-  <script src='https://use.fontawesome.com/4ecc3dbb0b.js'></script>
-</body>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <br />
+    <div class="grid-container">
+      <div class="item1">
+        <h1
+          align="center"
+          style="
+            font-size: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          "
+        >
+          <strong> StudentLiaison </strong>
+        </h1>
+      </div>
+      <div class="item2">
+        <object
+          type="image/svg+xml"
+          data="img/iis4.svg"
+          width="450"
+          height="450"
+        ></object>
+      </div>
+      <div class="item3" style="font-size: 20px">
+        &emsp;<br /><br /><br /><br /><br />
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          onclick="window.location.href='login_student.php';"
+          style="font-size: 22px"
+        >
+          Student Log In</button
+        ><br />
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          onclick="window.location.href='login_admin.php';"
+          style="font-size: 22px"
+        >
+          Admin Log In
+        </button>
+        <!-- <div class="item5">
+          <object
+            type="image/svg+xml"
+            data="img/iis2.svg"
+            width="250"
+            height="250"
+          ></object>
+        </div> -->
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>
+  </body>
 </html>

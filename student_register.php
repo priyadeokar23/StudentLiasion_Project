@@ -1,66 +1,47 @@
-<?php
+ <?php
+$insert = false;
+if(isset($_POST['register'])){
+  
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName="studentdata";
 
-// php code to Insert data into mysql database from input text
-if(isset($_POST['register']))
-{
-    $hostname = "localhost";
-    $username = "root";
-    $password = "tejalpkhed@12_2001";
-    $databaseName = "studentdata";
-    
-    // get values form input text and number
 
-    
-    
-    $cno=$_POST['cno'];
-    $fname = $_POST['fname'];
-    $mname = $_POST['mname'];
-    $lname = $_POST['lname'];
-    $year = $_POST['year'];
-    $contactno = $_POST['contactno'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-   
-    
-    //$sql = "INSERT INTO studentform (cno,fname,mname,lname,year,contactno,email,password) VALUES ('$cno','$fname','$mname','$lname','$year','$contactno','$email',$password);";
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
 
+$cno= $_POST['cno'];
+$fname = $_POST['fname'];
+$mname = $_POST['mname'];
+$lname = $_POST['lname'];
+$year = $_POST['year'];
+$contactno = $_POST['contactno'];
+$email = $_POST['email'];
+$password = $_POST['password'];
     
-    // connect to mysql database using mysqli
-
-    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
+    $sql = "INSERT INTO `studentform`(cno,fname,mname,lname,year,contactno,email,password) VALUES ('$cno', '$fname', '$mname', '$lname','$year','$contactno','$email', '$password');";
+    $result = mysqli_query($connect,$sql);
     
-    // mysql query to insert data
-
-   // $query = "INSERT INTO `facultydata`(`email`, `password`, `first_name`, `middle_name`, `last_name`, `facnm_author`, `designation`, `contact_no`, `qualification`, `teaching`, `industry`, `research`, `area_of_interest`) VALUES ('$email','$password','$fname', '$mname', '$lname', '$aname', '$designation', '$contact_no', '$qualification','$teaching', '$industry', '$research','$area')";
-    $query= "INSERT INTO `studentform` (`cno`,`fname`,`mname`,`lname`,`year`,`contactno`,`email`,`password`) VALUES (`$cno`,`$fname`,`$mname`,`$lname`,`$year`,`$contactno`,`$email`,`$password`)";
-
-    $result = mysqli_query($connect,$query);
-    
-    // check if mysql query successful
-
-    if($result)
-    {
-        echo '<script type="text/javascript"> alert("Data Inserted") </script>';
-    }
-    
-    else{
-	echo '<script type="text/javascript"> alert("Data Not Inserted") </script>';
+    if($result){
+          echo '<script type="text/javascript"> alert("Data Inserted") </script>';
+         $insert = true;
         
     }
-    
-   // mysqli_free_result($result);
-   echo "<script>window.open('index.html ','_self')</script>";
-  
-    mysqli_close($connect);
-}
+    else
+    {
+        echo '<script type="text/javascript"> alert("Data Not Inserted") </script>';
+        }
 
+    mysqli_close($connect);
+
+}
 ?>
 
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>StudentLiasion</title>
+  <title>StudentLiaison</title>
   
   <link rel="stylesheet" href="style.css">
   <style>

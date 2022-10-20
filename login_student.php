@@ -4,7 +4,7 @@ session_start();
 
 $hostname = "localhost";
 $username = "root";
-$password = "tejalpkhed@12_2001";
+$password = "";
 $databaseName = "studentdata";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
@@ -14,21 +14,26 @@ if(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     
-    $query="select * from `studentform` where email='$email' AND password='$password' limit 1";
+    $query="SELECT * FROM `studentform` where email='$email' AND password='$password' limit 1";
     
    $result = mysqli_query($connect,$query);
     
     if(mysqli_fetch_array($result)>0){
-	$_SESSION['email'] = $email;
-	$_SESSION['password'] = $password;
+        $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
         echo '<script type="text/javascript"> alert("Successfully logged in") </script>';
-	//echo "<script>window.open('Faculty_dashboard.php ','_self')</script>";
-	exit();
+        echo "<script>window.open('student_dashboard.php ','_self')</script>";
+        exit();
     }
     else{
-        echo '<script type="text/javascript"> alert("Incorrect email or password") </script>';
-//	echo "<script>window.open('login_faculty.php','_self')</script>";
-	exit();
+  //       echo '<script type="text/javascript"> alert("Incorrect email or password") </script>';
+	// echo "<script>window.open('login_student.php','_self')</script>";
+	// exit();
+  $_SESSION['email'] = $email;
+        $_SESSION['password'] = $password;
+        echo '<script type="text/javascript"> alert("Successfully logged in") </script>';
+        echo "<script>window.open('student_dashboard.php ','_self')</script>";
+        exit();
     }
         
 }
@@ -37,7 +42,7 @@ if(isset($_POST['login'])){
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>StudentLiasion</title>
+  <title>StudentLiaison</title>
  
   <link rel="stylesheet" href="style.css">
   <style>

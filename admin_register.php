@@ -1,48 +1,55 @@
+
 <?php
+$insert = false;
+if(isset($_POST['register'])){
+  
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$databaseName="studentdata";
 
-// php code to Insert data into mysql database from input text
-if(isset($_POST['register']))
-{
-    $hostname = "localhost";
-    $username = "root";
-    $password = "tejalpkhed@12_2001";
-    $databaseName = "studentdata";
+// Create connection
+//$conn = new mysqli($servername, $username, $password,$dbname);
+
+$connect = mysqli_connect($hostname, $username, $password, $databaseName);
+
+// Check connection
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
+// echo "Connected successfully";
+
     
-    // get values form input text and number
-
     $email = $_POST['email'];
     $password = $_POST['password'];
     $fname = $_POST['fname'];
     $mname = $_POST['mname'];
     $lname = $_POST['lname'];
+    //$connect = mysqli_connect($hostname, $username, $password, $databaseName);
     
-    // connect to mysql database using mysqli
+    $sql = "INSERT INTO `adminform`(`email`, `password`, `fname`, `mname`, `lname`) VALUES ('$email','$password','$fname', '$mname', '$lname')";
+    
+    $result = mysqli_query($connect,$sql);
+    // Execute the query
+    if($result){
+         //echo " Data successfully inserted";
 
-    $connect = mysqli_connect($hostname, $username, $password, $databaseName);
-    
-    // mysql query to insert data
-
-    $query = "INSERT INTO `adminform`(`email`, `password`, `first_name`, `middle_name`, `last_name`) VALUES ('$email','$password','$fname', '$mname', '$lname')";
-    
-    $result = mysqli_query($connect,$query);
-    
-    // check if mysql query successful
-
-    if($result)
-    {
-        echo '<script type="text/javascript"> alert("Data Inserted") </script>';
-    }
-    
-    else{
-	echo '<script type="text/javascript"> alert("Data Not Inserted") </script>';
+         echo '<script type="text/javascript"> alert("Data Inserted") </script>';
+        // Flag for successful insertion
+        $insert = true;
         
     }
-	echo "<script>window.open('index.html ','_self')</script>";
-	
-   // mysqli_free_result($result);
+    else
+    {
+       // echo "ERROR: $sql <br> $conn->error";
+        echo '<script type="text/javascript"> alert("Data Not Inserted") </script>';
+       // echo "Data Not Inserted";
+    }
+
+    // Close the database connection
+    //$conn->close();
     mysqli_close($connect);
 }
-
 ?>
 
 <!DOCTYPE html>

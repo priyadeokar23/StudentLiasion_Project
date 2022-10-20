@@ -4,7 +4,7 @@ session_start();
 
 $hostname = "localhost";
 $username = "root";
-$password = "tejalpkhed@12_2001";
+$password = "";
 $databaseName = "studentdata";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
@@ -16,7 +16,7 @@ if(isset($_POST['change'])){
 	$password2=$_POST['password2'];
     
 	if($password1 == $password2){
-		$query="UPDATE `studenform` SET password = '$password1' where email='$email' limit 1";
+		$query="UPDATE `studentform` SET password = '$password1' where email='$email' limit 1";
     
 		$result = mysqli_query($connect,$query);
     
@@ -46,7 +46,7 @@ if(isset($_POST['change'])){
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>StudentLiasion</title>
+  <title>StudentLiaison</title>
  
   <link rel="stylesheet" href="./style.css">
   <style>

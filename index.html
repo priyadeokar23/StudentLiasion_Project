@@ -1,54 +1,150 @@
-
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>StudentLiasion</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style11.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>StudentLiaison</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style11.css" />
 
-  <style>
-    .item1 { grid-area: header; }
-    .item2 { grid-area: menu; }
-    .item3 { grid-area: main; }
-    .item4 { grid-area: right; }
-    .item5 { grid-area: footer; }
+    <style>
+      .header {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        background-color:#bdc3c7;
     
-    .grid-container {
-      display: grid;
-      grid-template-areas:
-        'header header header header header header'
-        'menu main main main right right'
-        'menu main main main right right'
-        'menu main main main right right';
-      grid-gap: 1px;
-       padding: 10px;
-    }
-    
-    .grid-container > div {
-      text-align: center;
-      padding: 20px 0;
-    }
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        opacity: 0px;
+      }
+
+      .header_logo {
+        width: 170px;
+        object-fit: contain;
+        margin: 0 20px;
+        margin-top: 0px;
+        block-size: 100px;
+        height: 100px;
+        margin-left: 0%;
+      }
+
+      .header_item {
+        font-size: 20px;
+        font-family: "Times New Roman", Times, serif;
+        color: white;
+      }
+
+      .header_option {
+        display: flex;
+        justify-content: flex-end;
+        margin-left: 1200px;
+        margin-right: 10px;
+        color: white;
+      }
+
+      .item1 {
+        grid-area: header;
+      }
+      .item2 {
+        grid-area: auto;
+      }
+      .item3 {
+        grid-area: main;
+        margin-left: 300px;
+        
+      }
+      .item4 {
+        grid-area: right;
+      }
+      .item5 {
+        grid-area: footer;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-areas:
+          "header header header header header header"
+          "menu main main main right right"
+          "menu main main main right right"
+          "menu main main main right right";
+        grid-gap: 1px;
+        padding: 10px;
+      }
+
+      .grid-container > div {
+        text-align: center;
+        padding: 20px 0;
+      }
     </style>
-</head>
-<body>
-<!-- partial:index.partial.html -->
-  <br>
-  <div class="grid-container">
-    <div class="item1" ><h1 align="center" style="font-size:40px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><strong > StudentLiasion </strong></h1></div>
-    <div class="item2"><object type="image/svg+xml" data="img/iis3.svg" width="650" height="650"></object></div>
-    <div class="item3" style="font-size: 20px ; ">&emsp;<br><br><br><br><br> 
-    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='login-index.html';" style="font-size: 22px ;">
-      Log In            
-    </button><br>
-    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="window.location.href='register-index.html';" style="font-size: 22px ;">
-      Register           
-    </button>
-    <div class="item5"><object type="image/svg+xml" data="img/iis2.svg" width="250" height="250"></object></div>
-  </div>  
-  
-  </div>
-<!-- partial -->
-  <script src='https://use.fontawesome.com/4ecc3dbb0b.js'></script>
-</body>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <!-- <br /> -->
+    <div class="header">
+      <img class="header_logo" src="img\Cummins-College-Logo2.png" />
+
+      <!-- <div class="header_option">
+        <div class="header_item">
+          <a class="nav-link" href="Home.html">Home</a>
+        </div>
+        <div class="header_item">
+          <a class="nav-link" href="About.html">About</a>
+        </div>
+        <div class="header_item">
+          <a class="nav-link" href="Contact.html">Contact</a>
+        </div>
+      </div> -->
+    </div>
+    <div class="grid-container">
+      <div class="item1">
+        <h1
+          align="center"
+          style="
+            font-size: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          "
+        >
+          <strong> StudentLiaison </strong>
+        </h1>
+      </div>
+      <div class="item2">
+        <object
+          type="image/svg+xml"
+          data="img/iis6.svg"
+          width="450"
+          height="450"
+        ></object>
+      </div>
+      <div class="item3" style="font-size: 20px">
+        &emsp;<br /><br /><br /><br /><br />
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          onclick="window.location.href='login-index.html';"
+          style="font-size: 22px"
+        >
+          Log In</button
+        ><br />
+        <button
+          type="button"
+          class="btn btn-primary btn-lg btn-block"
+          onclick="window.location.href='register-index.html';"
+          style="font-size: 22px"
+        >
+          Register
+        </button>
+        <!-- <div class="item5">
+          <object
+            type="image/svg+xml"
+            data="img/iis2.svg"
+            width="250"
+            height="250"
+          ></object>
+        </div> -->
+      </div>
+    </div>
+    <!-- partial -->
+    <script src="https://use.fontawesome.com/4ecc3dbb0b.js"></script>
+  </body>
 </html>

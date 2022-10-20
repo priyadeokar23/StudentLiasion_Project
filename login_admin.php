@@ -3,7 +3,7 @@ session_start();
 
 $hostname = "localhost";
 $username = "root";
-$password = "tejalpkhed@12_2001";
+$password = "";
 $databaseName = "studentdata";
 
 $connect = mysqli_connect($hostname, $username, $password, $databaseName);
@@ -21,12 +21,12 @@ if(isset($_POST['login'])){
 		$_SESSION['email'] = $email;
 	    $_SESSION['password'] = $password;
         echo '<script type="text/javascript"> alert("Successfully logged in") </script>';
-		//echo "<script>window.open('Admin_dashboard.php','_self')</script>";
+		echo "<script>window.open('Admin_dashboard.php','_self')</script>";
 	exit();
     }
     else{
         echo '<script type="text/javascript"> alert("Incorrect email or password") </script>';
-		//echo "<script>window.open('login_admin.php','_self')</script>";
+		echo "<script>window.open('login_admin.php','_self')</script>";
 	exit();
     }
         
@@ -37,7 +37,7 @@ if(isset($_POST['login'])){
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>StudentLiasion</title>
+  <title>StudentLiaison</title>
  
   <link rel="stylesheet" href="style.css">
   <style>
